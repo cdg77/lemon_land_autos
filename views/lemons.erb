@@ -1,0 +1,7 @@
+<h1>Lemons</h1>
+
+<h3>Here are the lemons on this lot: </h3>
+<ul>
+  <% @vehicles.each() do |vehicle| %>
+    <li><a href="/lemons/<%= vehicle.id() %>"><%= vehicle.model() %></a></li>
+</ul>

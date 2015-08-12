@@ -7,13 +7,13 @@ get('/') do
   erb(:index)
 end
 
-get('/lemon') do
+get('/lemons') do
   @vehicles = Vehicle.all()
-  erb(:lemon)
+  erb(:lemons)
 end
 
 get('/lemons/new') do
-  erb(:vehicle_form)
+  erb(:lemons_form)
 end
 
 post('/lemons') do
