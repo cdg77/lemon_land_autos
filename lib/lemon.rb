@@ -4,6 +4,7 @@ class Vehicle
     @year = year
     @model = model
     @make = make
+    @id = @@vehicles.length().+(1)
   end
 
   define_method(:age) do
@@ -27,6 +28,9 @@ class Vehicle
   define_method(:year) do
     @year
   end
+  define_method(:id) do
+    @id
+  end
   define_singleton_method(:all) do
     @@vehicles
   end
@@ -38,4 +42,6 @@ class Vehicle
   define_singleton_method(:clear) do
     @@vehicles = []
   end
+  #
+  # define_singleton_method(:)
 end
