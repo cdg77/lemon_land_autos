@@ -18,6 +18,10 @@ class Vehicle
     !(american.&(new_enough))
   end
 
+  define_method(:make) do
+    @make
+  end
+
   define_singleton_method(:all) do
     @@vehicles
   end

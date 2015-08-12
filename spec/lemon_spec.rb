@@ -19,12 +19,13 @@ describe(Vehicle) do
     end
   end
 
-  # describe("#make") do
-  #   it("returns the make of the vehicle") do
-  #     test_vehicle = Vehicle.new("Toyota", "Prius", 2000)
-  #     test_vehicle.save()
-  #   end
-  # end
+  describe("#make") do
+    it("returns the make of the vehicle") do
+      test_vehicle = Vehicle.new("Toyota", "Prius", 2000)
+      test_vehicle.save()
+      expect(test_vehicle.make()).to(eq('Toyota'))
+    end
+  end
 
   describe("#save") do
     it("adds a vehicle to the array of saved vehicles") do
