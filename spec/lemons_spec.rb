@@ -1,5 +1,5 @@
 require('rspec')
-require ('lemon')
+require ('lemons')
 
 describe(Vehicle) do
   before() do
