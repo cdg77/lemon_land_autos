@@ -1,6 +1,7 @@
 class Vehicle
+  @@vehicles = []
+
   define_method(:initialize) do |make, model, year|
-    @@vehicles = []
     @year = year
     @model = model
     @make = make
@@ -31,6 +32,7 @@ class Vehicle
   define_method(:id) do
     @id
   end
+
   define_singleton_method(:all) do
     @@vehicles
   end
@@ -42,6 +44,14 @@ class Vehicle
   define_singleton_method(:clear) do
     @@vehicles = []
   end
-  #
-  # define_singleton_method(:)
+
+  define_singleton_method(:find) do |identification|
+    found_vehicle = nil
+    @@vehicles.each() do |vehicle|
+      if vehicle.id().eql?(identification.to_i())
+        found_vehicle = vehicle
+      end
+    end
+    found_vehicle
+  end
 end
