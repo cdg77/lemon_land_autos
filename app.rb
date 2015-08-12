@@ -25,7 +25,7 @@ post('/lemons') do
   erb(:success)
 end
 
-get('/lemons/:id') do
+get('/lemon/:id') do
   @vehicle = Vehicle.find(params.fetch('id').to_i())
   erb(:lemon)
 end
