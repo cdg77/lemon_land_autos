@@ -13,7 +13,7 @@ get('/lemons') do
 end
 
 get('/lemons/new') do
-  erb(:lemons_form)
+  erb(:lemon_forms)
 end
 
 post('/lemons') do
