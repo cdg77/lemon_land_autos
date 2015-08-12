@@ -2,6 +2,9 @@ require('rspec')
 require ('lemon')
 
 describe(Vehicle) do
+  before() do
+    Vehicle.clear()
+  end
   describe("#age") do
     it("returns the vehicles age") do
       test_vehicle = Vehicle.new("Toyota", "Prius", 2000)
@@ -28,6 +31,19 @@ describe(Vehicle) do
       test_vehicle = Vehicle.new("Toyota", "Prius", 2000)
       test_vehicle.save()
       expect(Vehicle.all()).to(eq([test_vehicle]))
+    end
+  end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Vehicle.all()).to(eq([]))
+    end
+  end
+  describe(".clear") do
+    it("emtpies out all of the saved vehicles") do
+      Vehicle.new("Toyota", "Prius", 2000).save()
+      Vehicle.clear()
+      expect(Vehicle.all()).to(eq([]))
     end
   end
 end
