@@ -1,5 +1,6 @@
 class Vehicle
   define_method(:initialize) do |make, model, year|
+    @@vehicles = []
     @year = year
     @model = model
     @make = make
@@ -15,6 +16,14 @@ class Vehicle
     american = american_cars.include?(@make)
     new_enough = self.age().<=(15)
     !(american.&(new_enough))
+  end
+
+  define_singleton_method(:all) do
+    @@vehicles
+  end
+
+  define_method(:save) do
+    @@vehicles.push(self)
   end
 
 end
