@@ -21,7 +21,9 @@ class Vehicle
   define_method(:make) do
     @make
   end
-
+  define_method(:model) do
+    @model
+  end
   define_singleton_method(:all) do
     @@vehicles
   end
