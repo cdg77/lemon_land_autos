@@ -24,6 +24,9 @@ class Vehicle
   define_method(:model) do
     @model
   end
+  define_method(:year) do
+    @year
+  end
   define_singleton_method(:all) do
     @@vehicles
   end
